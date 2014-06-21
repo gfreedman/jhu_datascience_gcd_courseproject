@@ -59,8 +59,9 @@
 
 ## Step 3) Create the final raw data set that we can use to make a tidy data set from:
 > An R data.frame called "finalDataSet" is created by binding together the above test and train data sets returned from "createDataSet()"
-> Then I search through "finalDataSet" to remove all columns that aren't concerned with the mean, I used grep and a simple string pattern of either "mean" or "std"
+> Then I search through "finalDataSet" to remove all columns that aren't concerned with the mean, I used grep and a simple string pattern of either "mean()" or "std()"
 > Also per course forum discussion I felt ok dropping all columns that had to do with mean frequency --> https://class.coursera.org/getdata-004/forum/thread?thread_id=229
+> Here is another thread supporting use of "mean()" and "std()" --> https://class.coursera.org/getdata-004/forum/thread?thread_id=219#comment-1188
 > Then I cleaned up the column names themselves so that it would be easy to refer to them as R objects using gsub (i.e. df$myNiceColumnName)
 > I exported this as a CSV file and inspected it using MS Excel to make sure that it all made sense and that the code was performing as it should.
 > It's worth noting that I ran a few little mini tests, printing out values, dimensions and column names as a sanity check.
@@ -90,6 +91,10 @@
 >After doing this I created another CSV file, loaded it up in MS Excel and made sure it was looking like I though it did.
 >It's also worth noting that I did a few manual mean calculation myself using a very restricted subset of the tidy data set just to make sure it was actually calculating the mean values as I expected.
 >The final step was to write the tidy data set as a text file so it can be uploaded to Coursera
+
+## Step 4a) How Do I Know It's Tidy?
+> The basic approach above was vetted by a JHU TA in the forums --> https://class.coursera.org/getdata-004/forum/thread?thread_id=219
+> Hopefully this is convincing enough but beyond that each row is a distinct measurement for each unique subject ID + activity combo 
 
 ## Step 5) Remember when coding the key is to keep fit and having fun
 > Reading the forums also helps quite a bit!
