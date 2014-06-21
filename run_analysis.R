@@ -137,8 +137,8 @@ finalDataSet <- rbind(trainDataSet,testDataSet)
 # let's see how hard it is to remove columns based on a condition:
 
 # look for indices where we have mean or std in the col name:
-meanCols <- grep(tolower("mean"),colnames(finalDataSet))
-stdDevCols <- grep(tolower("std"),colnames(finalDataSet))
+meanCols <- grep(tolower("mean()"),colnames(finalDataSet))
+stdDevCols <- grep(tolower("std()"),colnames(finalDataSet))
 
 # now combine them with our first four columns we want to keep to get indices for good columns:
 goodColumns <- c(1:4, meanCols, stdDevCols)
